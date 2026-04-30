@@ -74,7 +74,7 @@ int main() {
         else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
             if (event.mouse.button == 1) { // Clic gauche
                 if (etat_actuel == MENU) {
-                    // Détection de la collision de la souris avec le bouton
+
                     if (event.mouse.x >= btn_x && event.mouse.x <= btn_x + btn_w &&
                         event.mouse.y >= btn_y && event.mouse.y <= btn_y + btn_h) {
                         etat_actuel = JEU; // Transition vers la cuisine
@@ -85,9 +85,9 @@ int main() {
         else if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
             if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
                 if (etat_actuel == JEU) {
-                    etat_actuel = MENU; // La touche Echap permet de revenir au menu
+                    etat_actuel = MENU;
                 } else {
-                    en_cours = false; // Echap dans le menu quitte le programme
+                    en_cours = false;
                 }
             }
         }
@@ -95,7 +95,7 @@ int main() {
 
         if (redessiner && al_is_event_queue_empty(queue)) {
             redessiner = false;
-            al_clear_to_color(al_map_rgb(0, 0, 0)); // Nettoyage de l'écran
+            al_clear_to_color(al_map_rgb(0, 0, 0));
 
             if (etat_actuel == MENU) {
                 if (bg_menu) al_draw_bitmap(bg_menu, 0, 0, 0);
