@@ -7,7 +7,7 @@
 const int LARGEUR = 800;
 const int HAUTEUR = 600;
 
-/
+
 enum EtatJeu {
     MENU,
     JEU
